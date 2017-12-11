@@ -6,15 +6,16 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Rejestracja</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
 </head>
 <body>
 <h1>Rejestracja</h1>
 
 <form action="Register.php" method="post">
-    User: <input type="text" name="User" required/><br><br>
-    Password: <input type="password" name="password" required/><br><br>
-    Repeat Password: <input type="password" name="passwordr" required/><br><br>
-    <input type="submit" name="send" value="Send"/><br><br>
+    User: <input type="text" name="User" class="form" required/><br><br>
+    Password: <input type="password" name="password" class="form" required/><br><br>
+    Repeat Password: <input type="password" name="passwordr" class="form" required/><br><br>
+    <input type="submit" name="send" value="Send" class="form"/><br><br>
 </form>
 
 
