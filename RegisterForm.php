@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +16,7 @@
     Repeat Password: <input type="password" name="passwordr" required/><br><br>
     <input type="submit" name="send" value="Send"/><br><br>
 </form>
+
 
 </body>
 </html>

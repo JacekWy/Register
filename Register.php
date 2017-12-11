@@ -1,15 +1,48 @@
 <?php
 require_once ('Connect.php');
+session_start();
+
+if (isset($_POST["send"]))
+{
+    $check = true;
+
+    if (empty($_POST["User"]))
+    {
+        $check = false;
+    }
+    else
+        {
+        $check = true;
+    }
+    if($_POST['password'] == $_POST['passwordr'])
+    {
+        $check = true;
+    }else{
+        $check = false;
+        //$_SESSION['error'] = 'Hasla nie sa takie same';
+        header('Location:RegisterForm.php');
+    }
 
 
-$user = $_POST['User'];
-$pass1 = $_POST['password'];
-$pass2 = $_POST['passwordr'];
+    if($check){
+        $user = $_POST['User'];
+        $pass1 = $_POST['password'];
+        $pass2 = $_POST['passwordr'];
 
-$conn->query("insert into uzytkownicy (User, Password, PasswordR) VALUES ('$user','$pass1','$pass2')");
-$conn->close();
+        $conn->query("insert into uzytkownicy (User, Password, PasswordR) VALUES ('$user','$pass1','$pass2')");
+        $conn->query("insert into magazyn (Wood, Food, Iron) VALUES (10,10,10)");
 
-header('Location: Index.html');
+        $conn->close();
+
+        header('Location: Index.html');
+    }else{
+        echo 'Nieprawda';
+    }
+}
+
+
+
+
 
 
 ?>
