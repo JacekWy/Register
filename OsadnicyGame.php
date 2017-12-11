@@ -1,5 +1,6 @@
 <?php
 require_once ('Connect.php');
+include ('DodajSurowce.php');
 session_start();
 
 echo 'Zalogowany '.$_SESSION['User'].'<br>';
@@ -19,6 +20,9 @@ if($result->num_rows > 0)
 
     }
 }
+addwood();
+addfood();
+addiron();
 
 echo '<a href="Logout.php">logout</a>';
 
