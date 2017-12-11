@@ -7,6 +7,7 @@ echo 'Zalogowany '.$_SESSION['User'].'<br>';
 $name = $_SESSION['User'];
 
 
+
 $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytkownicy.id AND uzytkownicy.User = '$name'");
 
 
@@ -20,9 +21,8 @@ if($result->num_rows > 0)
 
     }
 }
-addwood();
-addfood();
-addiron();
+
+
 
 echo '<a href="Logout.php">logout</a>';
 
