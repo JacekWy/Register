@@ -1,12 +1,16 @@
 <?php
 require_once ('Connect.php');
 
+session_start();
+
 $user = $_POST['user'];
 $password = $_POST['password'];
+
 
 $sql = $conn->query("select * from uzytkownicy where User='$user' and Password = '$password'");
 $row = $sql->num_rows;
 
+$_SESSION['User'] = $user;
 if($row == 1){
     header('Location: OsadnicyGame.php');
 }else{

@@ -1,10 +1,12 @@
 <?php
 require_once ('Connect.php');
+session_start();
 
-echo 'Zalogowwny'.'<br>';
-echo 'Twoje konto'.'<br>';
+echo 'Zalogowwny '.$_SESSION['User'].'<br>';
+$name = $_SESSION['User'];
 
-$result = $conn->query("select * from magazyn");
+$result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytkownicy.id AND uzytkownicy.User = '$name'");
+
 
 if($result->num_rows > 0)
 {
