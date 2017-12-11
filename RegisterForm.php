@@ -12,11 +12,14 @@ session_start();
 <h1>Rejestracja</h1>
 
 <form action="Register.php" method="post">
-    User: <input type="text" name="User" class="form" required/><br><br>
-    Password: <input type="password" name="password" class="form" required/><br><br>
+    <p>User: <input type="text" name="User" class="form" required/><br><br></p>
+    <p>Password: <input type="password" name="password" class="form" required/><br><br></p>
     Repeat Password: <input type="password" name="passwordr" class="form" required/><br><br>
     <input type="submit" name="send" value="Send" class="form"/><br><br>
 </form>
+
+
+
 
 
 </body>
