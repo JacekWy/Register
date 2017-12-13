@@ -1,0 +1,21 @@
+header{
+    text-align: center;
+    background-color: #b7b7b7;
+    height: 100px;
+    padding-top: 12px;
+}
+nav{
+font-size: 20px;
+    border-style: solid;
+}
+#game1{
+    float: left;
+}
+#gameoption{
+    float: left;
+
+}
+
+footer{
+    clear: both;
+}
