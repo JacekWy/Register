@@ -1,5 +1,5 @@
 <?php
-require_once ('Connect.php');
+require_once('Connect.php');
 session_start();
 
 if (isset($_POST["send"]))
