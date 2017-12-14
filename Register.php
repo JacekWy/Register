@@ -27,9 +27,9 @@ if (isset($_POST["send"]))
     if($check){
         $user = $_POST['User'];
         $pass1 = $_POST['password'];
-        $pass2 = $_POST['passwordr'];
 
-        $conn->query("insert into uzytkownicy (User, Password, PasswordR) VALUES ('$user','$pass1','$pass2')");
+
+        $conn->query("insert into uzytkownicy (User, Password) VALUES ('$user','$pass1')");
         $conn->query("insert into magazyn (Wood, Food, Iron) VALUES (10,10,10)");
 
         $conn->close();

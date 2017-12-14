@@ -16,4 +16,3 @@ if($row > 0){
 }else{
     header('Location: Login.html');
 }
-
