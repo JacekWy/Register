@@ -1,8 +1,13 @@
 <?php
 require_once('Connect.php');
+session_start();
 
+$sur = $_POST['Liczba_a'];
+$surowiec = $_POST['wybor'];
+$id = $_SESSION['User'];
 
-$wood = $conn->query("update magazyn set Wood = Wood + 10 WHERE id = 1 ");
-$food = $conn->query("update magazyn set Food = Food + 10 WHERE id = 1 ");
-$iron = $conn->query("update magazyn set Iron = Iron + 10 WHERE id = 1 ");
+$conn->query("update magazyn, uzytkownicy set $surowiec = $surowiec + $sur WHERE uzytkownicy.User = '$id'");
+
+header('Location: OsadnicyGame.php');
+
 

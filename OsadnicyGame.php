@@ -4,6 +4,8 @@ session_start();
 $name = $_SESSION['User'];
 
 $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytkownicy.id AND uzytkownicy.User = '$name'");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +19,8 @@ $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytk
     <h1>Osadnicy</h1>
 </header>
 <nav>
-   <?php if($result->num_rows > 0)
+   <?php
+     if($result->num_rows > 0)
     {
         while ($row = $result->fetch_assoc())
         {
@@ -26,7 +29,9 @@ $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytk
             echo 'Zelazo: '.$row['Iron'].' ';
             echo '<a href="Logout.php">logout</a>';
         }
+
     }
+
 
     ?>
 </nav>
@@ -35,7 +40,16 @@ $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytk
         <img src="assets/ss_2.jpg">
     </div>
     <div id="gameoption">
-        <h2>Dodawanie</h2>
+        <h2>Dodawanie Surowcow</h2>
+        <form action="DodajSurowce.php" method="post">
+            Ilosc surowcow: <input type="text" name="Liczba_a" required><br><br>
+            Wybierz: <select name="wybor">
+                <option name="Wood">Wood</option>
+                <option name="Food">Food</option>
+                <option name="Iron">Iron</option>
+            </select><br><br>
+            <input type="submit" name="submit" value="Dodaj"><br>
+
 
     </div>
 
