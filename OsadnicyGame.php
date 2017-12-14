@@ -10,7 +10,7 @@ $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytk
 <head>
     <meta charset="UTF-8">
     <title>Osadnicy</title>
-    <link rel="stylesheet" type="text/css" href="../css/osadnicy_style.css">
+    <link rel="stylesheet" type="text/css" href="css/osadnicy_style.css">
 </head>
 <body>
 <header>
@@ -24,7 +24,7 @@ $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytk
             echo 'Drzewo: '.$row['Wood'].' ';
             echo 'Food: '.$row['Food'].' ';
             echo 'Zelazo: '.$row['Iron'].' ';
-            echo '<a href="Register_file/Logout.php">logout</a>';
+            echo '<a href="Logout.php">logout</a>';
         }
     }
 
@@ -32,7 +32,7 @@ $result = $conn->query("select * from magazyn,uzytkownicy where magazyn.id=uzytk
 </nav>
 <div id="game">
     <div id="game1">
-        <img src="../assets/ss_2.jpg">
+        <img src="assets/ss_2.jpg">
     </div>
     <div id="gameoption">
         <h2>Dodawanie</h2>

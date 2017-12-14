@@ -20,7 +20,7 @@ if (isset($_POST["send"]))
     }else{
         $check = false;
         //$_SESSION['error'] = 'Hasla nie sa takie same';
-        header('Location:RegisterForm.php');
+        header('Location: RegisterForm.php');
     }
 
 
